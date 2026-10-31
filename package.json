@@ -1,0 +1,14 @@
+{
+  "name": "gaplens",
+  "version": "1.0.0",
+  "private": true,
+  "description": "GapLens — AI-Assisted Information Gap Detection Platform",
+  "scripts": {
+    "start": "node gaplens/frontend/server.js",
+    "frontend": "node gaplens/frontend/server.js",
+    "backend": "python gaplens/app/main.py",
+    "dev": "node gaplens/frontend/server.js"
+  },
+  "author": "Krishn Kushwaha (Team DEVENGERS)",
+  "license": "MIT"
+}

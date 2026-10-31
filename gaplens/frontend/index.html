@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GapLens — AI Information Gap Detection Platform</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="landing-page">
+    <nav class="glass-panel navbar">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="gaplens_logo.jpeg" alt="Logo" style="width: 36px; height: 36px; border-radius: 10px; object-fit: cover;">
+        <span style="font-weight: 800; font-size: 18px; letter-spacing: -0.3px; color: #0f172a;">GapLens</span>
+      </div>
+      <div class="nav-links">
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#demo-preview" class="nav-item">Live Engine</a>
+        <a href="#trust" class="nav-item">Verification Guarantees</a>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <button class="magnetic-btn btn-primary" onclick="showAuthModal()">
+          Demo Login (Krishn)
+        </button>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <div class="hero-badge">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--cherry-red);"></span>
+        Information Integrity Engine · Digital Dark Spot Detection
+      </div>
+      <h1 class="hero-title">
+        Don’t Just Find Answers.<br><span style="background: linear-gradient(135deg, #0284c7 0%, var(--slate-blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Audit What's Missing.</span>
+      </h1>
+      <p class="hero-subtitle">
+        An AI-assisted information gap detection platform that audits multi-source evidence instead of summarizing it. Identify unmentioned requirements, contradictory numbers, and outdated cycles.
+      </p>
+      <div class="hero-cta-group">
+        <button class="magnetic-btn btn-primary" style="padding: 14px 28px; font-size: 15px;" onclick="directEnterDashboard()">
+          Launch Live Dashboard (Krishn Kushwaha)
+        </button>
+        <a href="#demo-preview" class="magnetic-btn" style="padding: 14px 28px; font-size: 15px;">
+          View Live Data Visualization
+        </a>
+      </div>
+
+      <div class="glass-panel hero-viz-card" id="demo-preview">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-glass); padding-bottom: 14px;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--sprinkle-green); display: inline-block;"></span>
+              <strong style="font-size: 14px; color: #0f172a;">Real-Time Information Gap Engine</strong>
+            </div>
+            <div style="font-size: 12px; color: var(--slate-blue); margin-top: 2px;">Scenario: “What should I verify before applying for this scholarship?”</div>
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <span class="kpi-badge badge-red">1 Critical Dark Spot</span>
+            <span class="kpi-badge badge-blue">3 Sources Audited</span>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 20px;">
+          <div style="background: white; padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+            <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue);">EXPECTED CRITERIA</div>
+            <div style="font-size: 24px; font-weight: 800; color: #0f172a; margin-top: 4px;">6 Areas</div>
+            <div style="font-size: 11px; color: var(--sprinkle-green); margin-top: 2px;">5 Covered · 1 Missing</div>
+          </div>
+          <div style="background: white; padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+            <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue);">QUOTE INTEGRITY</div>
+            <div style="font-size: 24px; font-weight: 800; color: #0284c7; margin-top: 4px;">100%</div>
+            <div style="font-size: 11px; color: var(--slate-blue); margin-top: 2px;">Zero Numerical Drift</div>
+          </div>
+          <div style="background: white; padding: 14px; border-radius: 12px; border: 1px solid var(--border-glass);">
+            <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue);">READINESS VERDICT</div>
+            <div style="font-size: 22px; font-weight: 800; color: var(--cherry-red); margin-top: 4px;">NOT READY</div>
+            <div style="font-size: 11px; color: var(--cherry-red); margin-top: 2px;">Dark Spot on Renewal</div>
+          </div>
+        </div>
+
+        <div style="background: rgba(248, 248, 255, 0.8); border: 1px solid var(--border-glass); border-radius: 12px; padding: 16px; display: flex; justify-content: space-between; align-items: center;">
+          <div style="font-size: 13px;">
+            <strong style="color: var(--cherry-red);">Digital Dark Spot Detected:</strong> "Renewal Conditions" (Importance 5/5) not found in any reviewed source.
+          </div>
+          <button class="magnetic-btn btn-green" onclick="directEnterDashboard(); setTimeout(triggerAddHandbook, 400);" style="font-size: 12px; padding: 8px 14px;">
+            Test 2026 Handbook Ingestion
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="trust-section" id="trust">
+      <div style="font-size: 12px; font-weight: 700; color: var(--slate-blue); text-transform: uppercase; letter-spacing: 0.8px;">Auditing Standards & Integrity Guarantees</div>
+      <div class="trust-grid">
+        <div class="glass-panel trust-card">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sprinkle-green)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Verbatim Quote Anchoring</span>
+        </div>
+        <div class="glass-panel trust-card">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sky-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+          <span>Zero Hallucinated Numbers</span>
+        </div>
+        <div class="glass-panel trust-card">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--slate-blue)" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span>Temporal Cycle Analysis</span>
+        </div>
+        <div class="glass-panel trust-card">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cherry-red)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span>Deterministic Scoring</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section" id="features">
+      <div class="section-header">
+        <h2 class="section-title">Engineered to Expose Blind Spots</h2>
+        <p class="section-desc">Six high-performance capabilities designed for high-stakes decision verification.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-box" style="background: rgba(225, 29, 72, 0.12); color: var(--cherry-red);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Digital Dark Spot Detection</h3>
+          <p style="font-size: 13px; color: var(--slate-blue); line-height: 1.6;">Audits expected coverage lists against multi-source evidence. Empty cells pinpoint crucial omitted clauses.</p>
+        </div>
+
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-box" style="background: rgba(16, 185, 129, 0.12); color: var(--sprinkle-green);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Deterministic Quote Verifier</h3>
+          <p style="font-size: 13px; color: var(--slate-blue); line-height: 1.6;">Every finding is verified against the raw source text. Figures and quotas cannot drift or hallucinate.</p>
+        </div>
+
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-box" style="background: rgba(253, 164, 175, 0.35); color: #be123c;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Discrepancy & Conflict Resolver</h3>
+          <p style="font-size: 13px; color: var(--slate-blue); line-height: 1.6;">Displays side-by-side contradictions with domain authority scores and guidance toward the binding reference.</p>
+        </div>
+
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-box" style="background: rgba(91, 112, 138, 0.12); color: var(--slate-blue);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Temporal Staleness & Cycles</h3>
+          <p style="font-size: 13px; color: var(--slate-blue); line-height: 1.6;">Flags expired dates and prior application cycles (e.g., Fall 2023) to avoid relying on superseded notices.</p>
+        </div>
+
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-box" style="background: rgba(56, 189, 248, 0.15); color: #0284c7;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Ranked Checklist & Email Copy</h3>
+          <p style="font-size: 13px; color: var(--slate-blue); line-height: 1.6;">Prioritized verify-next action items with one-click official inquiry emails to send to administrative offices.</p>
+        </div>
+
+        <div class="glass-panel feature-card">
+          <div class="feature-icon-box" style="background: rgba(157, 183, 213, 0.25); color: var(--slate-blue);">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          </div>
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Re-run Diff Engine</h3>
+          <p style="font-size: 13px; color: var(--slate-blue); line-height: 1.6;">Add the authoritative policy handbook to watch digital dark spots resolve from red to green in real time.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="landing-footer">
+      <div>
+        <strong>GapLens Platform</strong> · AI-Assisted Information Gap Detection
+      </div>
+      <div>
+        Lead Developer: <strong>Krishn Kushwaha</strong> · Licensed under MIT
+      </div>
+    </footer>
+  </div>
+
+  <div id="auth-modal" class="modal-backdrop" style="display: none;">
+    <video class="modal-full-video-bg" autoplay muted loop playsinline preload="auto">
+      <source src="bg_animation.mp4" type="video/mp4">
+    </video>
+    <div class="modal-veil-overlay"></div>
+    <div class="glass-panel login-card" style="position: relative; z-index: 10;">
+      <video class="login-video-backdrop" autoplay muted loop playsinline preload="auto">
+        <source src="bg_animation.mp4" type="video/mp4">
+      </video>
+      <div class="login-video-overlay"></div>
+      <button onclick="closeAuthModal()" style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--slate-blue); z-index: 10;">✕</button>
+      <img src="gaplens_logo.jpeg" alt="GapLens Logo" style="width: 64px; height: 64px; border-radius: 18px; object-fit: cover; margin: 0 auto 16px auto; display: block; box-shadow: 0 10px 25px rgba(56, 189, 248, 0.3); position: relative; z-index: 2;">
+      <h2 style="font-size: 22px; font-weight: 700; margin-bottom: 6px; position: relative; z-index: 2;">Sign In to GapLens</h2>
+      <p style="font-size: 12px; color: var(--slate-blue); margin-bottom: 20px; position: relative; z-index: 2;">AI-Assisted Information Gap Detection · Digital Dark Spot Platform</p>
+      
+      <form id="login-form" style="position: relative; z-index: 2;">
+        <div style="text-align: left; margin-bottom: 6px; font-size: 12px; font-weight: 600; color: var(--slate-blue);">Email Address</div>
+        <input type="email" id="login-email" class="input-field" value="krishn@gaplens.ai" required>
+        
+        <div style="text-align: left; margin-bottom: 6px; font-size: 12px; font-weight: 600; color: var(--slate-blue);">Password</div>
+        <input type="password" id="login-password" class="input-field" value="demo123" required>
+        
+        <button type="submit" class="magnetic-btn btn-primary" style="width: 100%; padding: 12px; margin-top: 6px;">
+          Demo Login as Krishn Kushwaha
+        </button>
+      </form>
+      
+      <div style="margin-top: 18px; font-size: 12px; color: var(--slate-blue); background: rgba(220, 235, 255, 0.7); padding: 10px; border-radius: 10px; position: relative; z-index: 2;">
+        User: <strong>Krishn Kushwaha</strong> (Lead Full-Stack AI Engineer)
+      </div>
+    </div>
+  </div>
+
+  <div id="app-container" style="display: none;">
+    <aside class="sidebar">
+      <div>
+        <div class="brand-section">
+          <img src="gaplens_logo.jpeg" alt="Logo" style="width: 42px; height: 42px; border-radius: 12px; object-fit: cover;">
+          <div>
+            <div style="font-weight: 800; font-size: 16px; letter-spacing: -0.3px;">GapLens</div>
+            <div style="font-size: 11px; color: var(--slate-blue); font-weight: 500;">Digital Dark Spot Audit</div>
+          </div>
+        </div>
+
+        <nav class="nav-menu">
+          <a class="nav-link active" onclick="switchTab('overview')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Overview
+          </a>
+          <a class="nav-link" onclick="switchTab('advisor')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--sky-blue)" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            AI Gap Advisor
+            <span class="neon-dot" style="margin-left: auto;"></span>
+          </a>
+          <a class="nav-link" onclick="switchTab('heatmap')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            Coverage Heatmap
+          </a>
+          <a class="nav-link" onclick="switchTab('conflicts')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Source Conflicts
+          </a>
+          <a class="nav-link" onclick="switchTab('checklist')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 11 3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            Verify Checklist
+          </a>
+          <a class="nav-link" onclick="switchTab('staleness')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Freshness & Cycles
+          </a>
+          <a class="nav-link" onclick="switchTab('probes')">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            Follow-up Probes
+          </a>
+          <a class="nav-link" onclick="exitToLanding()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+            Landing Page
+          </a>
+        </nav>
+      </div>
+
+      <div>
+        <div class="sidebar-quote-card">
+          “Great insights find answers; great systems reveal what is missing.”
+        </div>
+        <div class="user-profile-badge">
+          <div class="user-avatar" id="sidebar-avatar">KK</div>
+          <div style="flex: 1; overflow: hidden;">
+            <div style="font-size: 13px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" id="sidebar-name">Krishn Kushwaha</div>
+            <div style="font-size: 11px; color: var(--slate-blue);">AI Systems Lab</div>
+          </div>
+          <button onclick="logout()" title="Logout" style="background: none; border: none; cursor: pointer; color: var(--slate-blue); padding: 4px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="top-bar">
+        <div>
+          <div style="font-size: 11.5px; font-weight: 700; color: var(--slate-blue); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px;">
+            Audit Workspace · Digital Dark Spot Intelligence
+          </div>
+          <h1 style="font-size: 24px; font-weight: 850; color: #0f172a; letter-spacing: -0.4px;">
+            “What should I verify before applying for this scholarship?”
+          </h1>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <button class="magnetic-btn btn-green" id="btn-handbook" onclick="triggerAddHandbook()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/></svg>
+            Add 2026 Handbook (Close Dark Spots)
+          </button>
+          <button class="magnetic-btn" onclick="triggerResetAudit()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+            Reset State
+          </button>
+        </div>
+      </header>
+
+      <div class="filters-row">
+        <div class="filter-pill">
+          <span>Topic:</span>
+          <select class="filter-select">
+            <option>Scholarships & Grants</option>
+            <option>Visa & Immigration</option>
+            <option>University Admissions</option>
+          </select>
+        </div>
+        <div class="filter-pill">
+          <span>Cycle:</span>
+          <select class="filter-select">
+            <option>2025-2026 Academic Window</option>
+            <option>All Historical Batches</option>
+          </select>
+        </div>
+        <div class="filter-pill">
+          <span>Authority Level:</span>
+          <select class="filter-select">
+            <option>All Sources (Official + Gazette + Forum)</option>
+            <option>Official Directives Only (Score ≥ 9)</option>
+          </select>
+        </div>
+        <div style="margin-left: auto; display: flex; align-items: center; gap: 8px;">
+          <button class="neon-status-pill" onclick="switchTab('advisor')">
+            <span class="neon-dot"></span>
+            <span>Gemini & OpenAI AI Advisor Online</span>
+          </button>
+        </div>
+      </div>
+
+      <section class="neon-advisor-card" id="advisor-widget-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--sky-blue), var(--sprinkle-green)); display: flex; align-items: center; justify-content: center; color: white;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+            </div>
+            <div>
+              <h3 style="font-size: 17px; font-weight: 850; color: #0f172a; letter-spacing: -0.3px;">AI Gap Intelligence Advisor</h3>
+              <div style="font-size: 11.5px; color: var(--slate-blue); font-weight: 600;">Powered by Google Gemini & OpenAI Architecture</div>
+            </div>
+          </div>
+          <div style="display: flex; gap: 8px;">
+            <select id="ai-provider-select" style="padding: 4px 10px; border-radius: 8px; border: 1px solid var(--border-glass); font-size: 11.5px; font-weight: 600; background: white; color: #0f172a; outline: none;">
+              <option value="gemini">Google Gemini 1.5</option>
+              <option value="openai">OpenAI GPT-4o</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="quick-prompts-row">
+          <button class="prompt-pill" onclick="sendAdvisorPrompt('What is my highest-risk dark spot?')">
+            🚨 Highest-risk dark spot?
+          </button>
+          <button class="prompt-pill" onclick="sendAdvisorPrompt('How do I resolve the income discrepancy?')">
+            ⚖️ Resolve income discrepancy
+          </button>
+          <button class="prompt-pill" onclick="sendAdvisorPrompt('Draft a formal verification notice to the board')">
+            📧 Draft board inquiry email
+          </button>
+          <button class="prompt-pill" onclick="sendAdvisorPrompt('How does the 2026 handbook close my gaps?')">
+            📖 How does handbook close gaps?
+          </button>
+        </div>
+
+        <div class="chat-history-box" id="advisor-chat-history">
+          <div class="chat-bubble-ai">
+            <strong>GapLens AI Advisor:</strong> I have reviewed your 3 sources against the 6 expected criteria. A critical <strong>Digital Dark Spot</strong> was detected in <em>Renewal Terms</em>. How can I assist your verification strategy today?
+          </div>
+        </div>
+
+        <form id="advisor-form" onsubmit="handleAdvisorSubmit(event)" class="advisor-input-bar">
+          <input type="text" id="advisor-input" class="advisor-text-input" placeholder="Ask AI Advisor about gaps, contradictions, or official verification..." autocomplete="off">
+          <button type="submit" class="magnetic-btn neon-btn" style="padding: 12px 22px;">
+            <span>Ask Advisor</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+          </button>
+        </form>
+      </section>
+
+      <section class="kpi-grid">
+        <div class="hr-card kpi-pastel-blue">
+          <div class="kpi-header">
+            <span>TOTAL SOURCES</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="kpi-value" id="kpi-sources" style="color: #0f172a;">3</div>
+          <span class="kpi-badge badge-green" id="kpi-sources-badge">↑ 12% vs. last year</span>
+        </div>
+
+        <div class="hr-card kpi-pastel-green">
+          <div class="kpi-header">
+            <span>NEW VERIFIED QUOTES</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <div class="kpi-value" id="kpi-quotes" style="color: #0f172a;">7</div>
+          <span class="kpi-badge badge-green" id="kpi-quotes-badge">↑ 27% vs. last year</span>
+        </div>
+
+        <div class="hr-card kpi-pastel-red">
+          <div class="kpi-header">
+            <span>DARK SPOT RISK</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+          </div>
+          <div class="kpi-value" id="kpi-darkspots" style="color: #0f172a;">16.7%</div>
+          <span class="kpi-badge badge-green" id="kpi-darkspots-badge">↓ 3.2% vs. last year</span>
+        </div>
+
+        <div class="hr-card kpi-pastel-purple">
+          <div class="kpi-header">
+            <span>COVERAGE RATIO</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="kpi-value" id="kpi-coverage" style="color: #0f172a;">83.3%</div>
+          <span class="kpi-badge badge-green" id="kpi-coverage-badge">↑ 8% vs. last month</span>
+        </div>
+
+        <div class="hr-card kpi-pastel-amber">
+          <div class="kpi-header">
+            <span>READINESS SCORE</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="#f59e0b" stroke="#f59e0b" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="kpi-value" id="kpi-verdict-title" style="color: #0f172a;">8.2 / 10</div>
+          <span class="kpi-badge badge-green" id="kpi-verdict-sub">↑ 0.6 vs. last year</span>
+        </div>
+      </section>
+
+      <section class="hr-dashboard-grid">
+        <div class="hr-card">
+          <div class="hr-card-title">Evidence by Requirement Area</div>
+          <div class="v-bar-container" id="bar-evidence-dept">
+            <div class="v-bar-col"><div class="v-bar-value" id="vb-val-1">72</div><div class="v-bar-body" id="vb-bar-1" style="height: 90%;"></div><div class="v-bar-label">Eligibility</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="vb-val-2">38</div><div class="v-bar-body" id="vb-bar-2" style="height: 48%;"></div><div class="v-bar-label">Docs</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="vb-val-3">34</div><div class="v-bar-body" id="vb-bar-3" style="height: 43%;"></div><div class="v-bar-label">Deadline</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="vb-val-4">28</div><div class="v-bar-body" id="vb-bar-4" style="height: 35%;"></div><div class="v-bar-label">Income</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="vb-val-5">26</div><div class="v-bar-body" id="vb-bar-5" style="height: 32%;"></div><div class="v-bar-label">Disburse</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="vb-val-6">22</div><div class="v-bar-body" id="vb-bar-6" style="height: 28%;"></div><div class="v-bar-label">Compl</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="vb-val-7">18</div><div class="v-bar-body" id="vb-bar-7" style="height: 22%;"></div><div class="v-bar-label">Admin</div></div>
+          </div>
+        </div>
+
+        <div class="hr-card">
+          <div class="hr-card-title">Source Authority Distribution</div>
+          <div class="donut-legend-wrap">
+            <div style="position: relative; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center;">
+              <svg class="donut-ring-svg" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#38bdf8" stroke-width="4.5" stroke-dasharray="42.7, 100"/>
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#2563eb" stroke-width="4.5" stroke-dasharray="57.3, 100" stroke-dashoffset="-42.7"/>
+              </svg>
+              <div style="position: absolute; text-align: center;">
+                <div style="font-size: 18px; font-weight: 850; color: #0f172a;" id="donut-total-1">248</div>
+                <div style="font-size: 9.5px; color: var(--slate-blue); font-weight: 600;">Total Citations</div>
+              </div>
+            </div>
+            <div class="donut-legend-list">
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #38bdf8;"></span>
+                <span>Gazette Bulletins</span>
+                <strong style="margin-left: auto;">106 (42.7%)</strong>
+              </div>
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #2563eb;"></span>
+                <span>Official Directives</span>
+                <strong style="margin-left: auto;">142 (57.3%)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hr-card">
+          <div class="hr-card-title">Evidence by Location & Category</div>
+          <div class="h-bar-list">
+            <div class="h-bar-item"><span class="h-bar-label">Official Portal</span><div class="h-bar-track"><div class="h-bar-fill-purple" style="width: 98%;"></div></div><span class="h-bar-val">98</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">Gov Circular</span><div class="h-bar-track"><div class="h-bar-fill-purple" style="width: 64%;"></div></div><span class="h-bar-val">64</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">Press Release</span><div class="h-bar-track"><div class="h-bar-fill-purple" style="width: 38%;"></div></div><span class="h-bar-val">38</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">Advisory Board</span><div class="h-bar-track"><div class="h-bar-fill-purple" style="width: 24%;"></div></div><span class="h-bar-val">24</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">Other Channels</span><div class="h-bar-track"><div class="h-bar-fill-purple" style="width: 24%;"></div></div><span class="h-bar-val">24</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hr-dashboard-grid">
+        <div class="hr-card">
+          <div class="hr-card-title">Monthly Verification Readiness Trend</div>
+          <div style="height: 160px; position: relative;">
+            <svg viewBox="0 0 320 130" style="width: 100%; height: 100%; overflow: visible;">
+              <line x1="25" y1="15" x2="310" y2="15" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="25" y1="45" x2="310" y2="45" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="25" y1="75" x2="310" y2="75" stroke="#f1f5f9" stroke-width="1"/>
+              <line x1="25" y1="105" x2="310" y2="105" stroke="#f1f5f9" stroke-width="1"/>
+              <text x="2" y="18" font-size="8" fill="#94a3b8">98%</text>
+              <text x="2" y="48" font-size="8" fill="#94a3b8">96%</text>
+              <text x="2" y="78" font-size="8" fill="#94a3b8">94%</text>
+              <text x="2" y="108" font-size="8" fill="#94a3b8">92%</text>
+              <polyline fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                points="30,75 55,60 80,75 105,45 130,30 155,45 180,60 205,30 230,15 255,45 280,30 305,30"/>
+              <circle cx="30" cy="75" r="3" fill="#2563eb"/>
+              <circle cx="55" cy="60" r="3" fill="#2563eb"/>
+              <circle cx="80" cy="75" r="3" fill="#2563eb"/>
+              <circle cx="105" cy="45" r="3" fill="#2563eb"/>
+              <circle cx="130" cy="30" r="3" fill="#2563eb"/>
+              <circle cx="155" cy="45" r="3" fill="#2563eb"/>
+              <circle cx="180" cy="60" r="3" fill="#2563eb"/>
+              <circle cx="205" cy="30" r="3" fill="#2563eb"/>
+              <circle cx="230" cy="15" r="3" fill="#2563eb"/>
+              <circle cx="255" cy="45" r="3" fill="#2563eb"/>
+              <circle cx="280" cy="30" r="3" fill="#2563eb"/>
+              <circle cx="305" cy="30" r="3" fill="#2563eb"/>
+              <text x="25" y="124" font-size="8" fill="#94a3b8">Jan</text>
+              <text x="50" y="124" font-size="8" fill="#94a3b8">Feb</text>
+              <text x="75" y="124" font-size="8" fill="#94a3b8">Mar</text>
+              <text x="100" y="124" font-size="8" fill="#94a3b8">Apr</text>
+              <text x="125" y="124" font-size="8" fill="#94a3b8">May</text>
+              <text x="150" y="124" font-size="8" fill="#94a3b8">Jun</text>
+              <text x="175" y="124" font-size="8" fill="#94a3b8">Jul</text>
+              <text x="200" y="124" font-size="8" fill="#94a3b8">Aug</text>
+              <text x="225" y="124" font-size="8" fill="#94a3b8">Sep</text>
+              <text x="250" y="124" font-size="8" fill="#94a3b8">Oct</text>
+              <text x="275" y="124" font-size="8" fill="#94a3b8">Nov</text>
+              <text x="300" y="124" font-size="8" fill="#94a3b8">Dec</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="hr-card">
+          <div class="hr-card-title">Source Type Breakdown</div>
+          <div class="donut-legend-wrap">
+            <div style="position: relative; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center;">
+              <svg class="donut-ring-svg" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#2563eb" stroke-width="4.5" stroke-dasharray="79.8, 100"/>
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#38bdf8" stroke-width="4.5" stroke-dasharray="12.9, 100" stroke-dashoffset="-79.8"/>
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#93c5fd" stroke-width="4.5" stroke-dasharray="7.3, 100" stroke-dashoffset="-92.7"/>
+              </svg>
+              <div style="position: absolute; text-align: center;">
+                <div style="font-size: 18px; font-weight: 850; color: #0f172a;">248</div>
+                <div style="font-size: 9.5px; color: var(--slate-blue); font-weight: 600;">Directives</div>
+              </div>
+            </div>
+            <div class="donut-legend-list">
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #2563eb;"></span>
+                <span>Official Directives</span>
+                <strong style="margin-left: auto;">198 (79.8%)</strong>
+              </div>
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #38bdf8;"></span>
+                <span>Gazette Circulars</span>
+                <strong style="margin-left: auto;">32 (12.9%)</strong>
+              </div>
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #93c5fd;"></span>
+                <span>Community Posts</span>
+                <strong style="margin-left: auto;">18 (7.3%)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hr-card">
+          <div class="hr-card-title">Top 5 Requirements by Depth</div>
+          <div class="h-bar-list">
+            <div class="h-bar-item"><span class="h-bar-label">Renewal Criteria</span><div class="h-bar-track"><div class="h-bar-fill-teal" style="width: 68%;"></div></div><span class="h-bar-val">68</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">Income Limit</span><div class="h-bar-track"><div class="h-bar-fill-teal" style="width: 42%;"></div></div><span class="h-bar-val">42</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">CGPA Minimum</span><div class="h-bar-track"><div class="h-bar-fill-teal" style="width: 30%;"></div></div><span class="h-bar-val">30</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">Attendance Rate</span><div class="h-bar-track"><div class="h-bar-fill-teal" style="width: 24%;"></div></div><span class="h-bar-val">24</span></div>
+            <div class="h-bar-item"><span class="h-bar-label">Submission Cutoff</span><div class="h-bar-track"><div class="h-bar-fill-teal" style="width: 20%;"></div></div><span class="h-bar-val">20</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="hr-dashboard-grid">
+        <div class="hr-card">
+          <div class="hr-card-title">Recent Verified Quotes</div>
+          <table class="recent-hires-table">
+            <thead>
+              <tr><th>Requirement</th><th>Source</th><th>Rule / Finding</th><th>Date</th></tr>
+            </thead>
+            <tbody id="recent-quotes-tbody">
+              <tr><td>Eligibility</td><td>Official Portal</td><td>Full-time undergraduates with CGPA 3.2</td><td>15 Jan 2026</td></tr>
+              <tr><td>Documents</td><td>Official Portal</td><td>Parental income certificate under $45,000</td><td>15 Jan 2026</td></tr>
+              <tr><td>Deadline</td><td>Official Portal</td><td>Submission window closes 31 March 2026</td><td>15 Jan 2026</td></tr>
+              <tr><td>Disbursement</td><td>Gazette Bulletin</td><td>Disbursements occur in two installments</td><td>20 Nov 2025</td></tr>
+              <tr><td>Deadline</td><td>Gazette Bulletin</td><td>Final application deadline 31 March 2026</td><td>20 Nov 2025</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="hr-card">
+          <div class="hr-card-title">Risk & Dark Spot Severity by Area</div>
+          <div class="v-bar-container v-bar-coral" id="bar-attrition-dept">
+            <div class="v-bar-col"><div class="v-bar-value" id="cor-val-1">5.2%</div><div class="v-bar-body" id="cor-bar-1" style="height: 52%;"></div><div class="v-bar-label">Eligibility</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="cor-val-2">6.8%</div><div class="v-bar-body" id="cor-bar-2" style="height: 68%;"></div><div class="v-bar-label">Docs</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="cor-val-3">14.6%</div><div class="v-bar-body" id="cor-bar-3" style="height: 98%;"></div><div class="v-bar-label">Renewal</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="cor-val-4">4.1%</div><div class="v-bar-body" id="cor-bar-4" style="height: 41%;"></div><div class="v-bar-label">Deadline</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="cor-val-5">7.6%</div><div class="v-bar-body" id="cor-bar-5" style="height: 76%;"></div><div class="v-bar-label">Income</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="cor-val-6">5.9%</div><div class="v-bar-body" id="cor-bar-6" style="height: 59%;"></div><div class="v-bar-label">Disburse</div></div>
+            <div class="v-bar-col"><div class="v-bar-value" id="cor-val-7">3.8%</div><div class="v-bar-body" id="cor-bar-7" style="height: 38%;"></div><div class="v-bar-label">Admin</div></div>
+          </div>
+        </div>
+
+        <div class="hr-card">
+          <div class="hr-card-title">Evidence Quality Distribution</div>
+          <div class="donut-legend-wrap">
+            <div style="position: relative; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center;">
+              <svg class="donut-ring-svg" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#1d4ed8" stroke-width="4.5" stroke-dasharray="45.6, 100"/>
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#3b82f6" stroke-width="4.5" stroke-dasharray="32.3, 100" stroke-dashoffset="-45.6"/>
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#93c5fd" stroke-width="4.5" stroke-dasharray="15.3, 100" stroke-dashoffset="-77.9"/>
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#e11d48" stroke-width="4.5" stroke-dasharray="6.8, 100" stroke-dashoffset="-93.2"/>
+              </svg>
+              <div style="position: absolute; text-align: center;">
+                <div style="font-size: 18px; font-weight: 850; color: #0f172a;">248</div>
+                <div style="font-size: 9.5px; color: var(--slate-blue); font-weight: 600;">Verified</div>
+              </div>
+            </div>
+            <div class="donut-legend-list">
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #1d4ed8;"></span>
+                <span>High (Score 9-10)</span>
+                <strong style="margin-left: auto;">113 (45.6%)</strong>
+              </div>
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #3b82f6;"></span>
+                <span>Good (Score 7-8)</span>
+                <strong style="margin-left: auto;">80 (32.3%)</strong>
+              </div>
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #93c5fd;"></span>
+                <span>Moderate (Score 5-6)</span>
+                <strong style="margin-left: auto;">38 (15.3%)</strong>
+              </div>
+              <div class="donut-legend-item">
+                <span class="donut-legend-dot" style="background: #e11d48;"></span>
+                <span>Dark Spot / Needs Rev</span>
+                <strong style="margin-left: auto;">17 (6.8%)</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="charts-row">
+        <div class="glass-panel chart-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <div>
+              <div style="font-size: 12px; font-weight: 700; color: var(--slate-blue); text-transform: uppercase;">Evidence Distribution</div>
+              <h3 style="font-size: 28px; font-weight: 850; color: #0f172a; margin-top: 2px;" id="chart-total-evidence">83% Coverage</h3>
+            </div>
+            <div style="text-align: right;">
+              <span class="kpi-badge badge-blue">Live Multi-Source</span>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 10px 0;">
+            <div style="position: relative; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center;">
+              <svg width="130" height="130" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#e2e8f0" stroke-width="4.5"/>
+                <circle id="donut-seg-official" cx="18" cy="18" r="14" fill="none" stroke="var(--sky-blue)" stroke-width="4.5" stroke-dasharray="52, 100" stroke-linecap="round"/>
+                <circle id="donut-seg-news" cx="18" cy="18" r="14" fill="none" stroke="var(--sprinkle-green)" stroke-width="4.5" stroke-dasharray="24, 100" stroke-dashoffset="-52" stroke-linecap="round"/>
+                <circle id="donut-seg-forum" cx="18" cy="18" r="14" fill="none" stroke="var(--slate-blue)" stroke-width="4.5" stroke-dasharray="14, 100" stroke-dashoffset="-76" stroke-linecap="round"/>
+              </svg>
+              <div style="position: absolute; text-align: center;">
+                <div style="font-size: 20px; font-weight: 850; color: #0f172a;" id="donut-center-pct">83%</div>
+                <div style="font-size: 10px; color: var(--slate-blue); font-weight: 600;">Sourced</div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                <span style="display: flex; align-items: center; gap: 6px; font-weight: 600;">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--sky-blue);"></span>
+                  Official Portal
+                </span>
+                <strong id="val-official">4 Quotes</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                <span style="display: flex; align-items: center; gap: 6px; font-weight: 600;">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--sprinkle-green);"></span>
+                  Education Gazette
+                </span>
+                <strong id="val-news">2 Quotes</strong>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 12px;">
+                <span style="display: flex; align-items: center; gap: 6px; font-weight: 600;">
+                  <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--slate-blue);"></span>
+                  Student Forum
+                </span>
+                <strong id="val-forum">1 Quote (Old)</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="category-mini-cards">
+            <div class="cat-mini-card">
+              <div class="cat-icon-circle" style="background: rgba(56, 189, 248, 0.15); color: #0284c7;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div>
+                <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue);">Official</div>
+                <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Score 9.5</div>
+              </div>
+            </div>
+
+            <div class="cat-mini-card">
+              <div class="cat-icon-circle" style="background: rgba(16, 185, 129, 0.15); color: #059669;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              </div>
+              <div>
+                <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue);">Gazette</div>
+                <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Score 6.5</div>
+              </div>
+            </div>
+
+            <div class="cat-mini-card">
+              <div class="cat-icon-circle" style="background: rgba(91, 112, 138, 0.15); color: var(--slate-blue);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+              </div>
+              <div>
+                <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue);">Forum</div>
+                <div style="font-size: 13px; font-weight: 800; color: #0f172a;">Score 4.0</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel chart-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+            <div>
+              <div style="font-size: 12px; font-weight: 700; color: var(--slate-blue); text-transform: uppercase;">Decision Readiness Gauge</div>
+              <h3 style="font-size: 18px; font-weight: 800; color: #0f172a; margin-top: 2px;">Verification Status</h3>
+            </div>
+            <span class="kpi-badge badge-red" id="gauge-badge">Critical Gaps</span>
+          </div>
+
+          <div class="arc-gauge-container">
+            <svg class="arc-gauge-svg" viewBox="0 0 220 120">
+              <path d="M 25 110 A 85 85 0 0 1 195 110" fill="none" stroke="#e2e8f0" stroke-width="18" stroke-linecap="round"/>
+              <path id="arc-gauge-progress" d="M 25 110 A 85 85 0 0 1 195 110" fill="none" stroke="var(--cherry-red)" stroke-width="18" stroke-linecap="round" stroke-dasharray="267" stroke-dashoffset="65" style="transition: all 0.6s ease;"/>
+            </svg>
+            <div class="arc-center-text">
+              <div class="arc-center-value" id="arc-center-val" style="color: var(--cherry-red);">NOT READY</div>
+              <div class="arc-center-label" id="arc-center-sub">1 Dark Spot Remaining</div>
+            </div>
+            <div class="gauge-pill-target">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Target: 100% Sourced Directives</span>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-around; margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--border-glass); font-size: 12px;">
+            <div>
+              <span style="color: var(--slate-blue);">Sourced:</span>
+              <strong id="gauge-sourced-count" style="color: var(--sprinkle-green); margin-left: 4px;">5 Areas</strong>
+            </div>
+            <div>
+              <span style="color: var(--slate-blue);">Missing:</span>
+              <strong id="gauge-missing-count" style="color: var(--cherry-red); margin-left: 4px;">1 Area</strong>
+            </div>
+            <div>
+              <span style="color: var(--slate-blue);">Confidence:</span>
+              <strong style="color: #0284c7; margin-left: 4px;">High</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass-panel benchmark-chart-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue); text-transform: uppercase;">Criteria Depth & Benchmark Comparison</div>
+            <h3 style="font-size: 17px; font-weight: 800; color: #0f172a; margin-top: 2px;">Expected Areas Coverage vs Target Benchmark</h3>
+          </div>
+          <div style="display: flex; gap: 12px; font-size: 11.5px;">
+            <span style="display: flex; align-items: center; gap: 6px; font-weight: 600;">
+              <span style="width: 10px; height: 10px; border-radius: 3px; background: var(--sprinkle-green);"></span>
+              Verified Criteria
+            </span>
+            <span style="display: flex; align-items: center; gap: 6px; font-weight: 600;">
+              <span style="width: 10px; height: 10px; border-radius: 3px; background: var(--baby-pink);"></span>
+              Variance / Conflict
+            </span>
+            <span style="display: flex; align-items: center; gap: 6px; font-weight: 600;">
+              <span style="width: 10px; height: 10px; border-radius: 3px; background: var(--cherry-red);"></span>
+              0% Dark Spot
+            </span>
+          </div>
+        </div>
+
+        <div class="pillars-row-container">
+          <div class="benchmark-line">
+            <span class="benchmark-badge">Avg. 80% Threshold</span>
+          </div>
+          <div id="pillars-container" style="display: flex; width: 100%; justify-content: space-between; height: 100%; align-items: flex-end;"></div>
+        </div>
+
+        <div class="balance-bar-wrapper">
+          <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 700;">
+            <span style="color: #065f46;">Verified Coverage: <span id="balance-txt-covered">83%</span></span>
+            <span style="color: var(--cherry-red);">Information Dark Spot: <span id="balance-txt-missing">17%</span></span>
+          </div>
+          <div class="balance-track">
+            <div class="balance-seg-verified" id="balance-bar-covered" style="width: 83%;"></div>
+            <div class="balance-seg-missing" id="balance-bar-missing" style="width: 17%;"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="glass-panel" style="padding: 24px; margin-bottom: 24px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 700; color: var(--slate-blue); text-transform: uppercase;">Continuous Segmented Timeline Heatmap</div>
+            <h3 style="font-size: 17px; font-weight: 800; color: #0f172a; margin-top: 2px;">Evidence Activity & Cycle Distribution</h3>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <span class="kpi-badge badge-blue">Peak: Official Portal</span>
+            <div style="display: flex; gap: 6px; font-size: 11px; align-items: center;">
+              <span style="color: var(--slate-blue);">Intensity:</span>
+              <span style="width: 10px; height: 10px; border-radius: 2px; background: #f1f5f9; display: inline-block;"></span> 0%
+              <span style="width: 10px; height: 10px; border-radius: 2px; background: rgba(56, 189, 248, 0.35); display: inline-block;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 2px; background: rgba(56, 189, 248, 0.7); display: inline-block;"></span>
+              <span style="width: 10px; height: 10px; border-radius: 2px; background: var(--sprinkle-green); display: inline-block;"></span> 100%
+            </div>
+          </div>
+        </div>
+        <div class="segmented-timeline-container" id="segmented-timeline"></div>
+      </section>
+
+      <section id="view-overview">
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div class="glass-panel" style="padding: 24px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+              <div>
+                <h3 style="font-size: 16px; font-weight: 750;">Coverage Heatmap Matrix</h3>
+                <p style="font-size: 12px; color: var(--slate-blue);">Auditing Expected Areas across Ingested Sources (Click cells to open Quote Inspector)</p>
+              </div>
+              <div style="display: flex; gap: 10px; font-size: 11px;">
+                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: var(--sprinkle-green);"></span> Covered</span>
+                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: var(--cherry-red);"></span> Dark Spot</span>
+                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: var(--baby-pink);"></span> Conflict</span>
+                <span style="display: flex; align-items: center; gap: 4px;"><span style="width: 10px; height: 10px; border-radius: 3px; background: var(--slate-blue);"></span> Outdated</span>
+              </div>
+            </div>
+            <div style="overflow-x: auto;">
+              <table class="heatmap-table" id="heatmap-table-element"></table>
+            </div>
+          </div>
+
+          <div class="glass-panel" style="padding: 24px;">
+            <h3 style="font-size: 16px; font-weight: 750; margin-bottom: 6px;">Audit Signal Breakdown</h3>
+            <p style="font-size: 12px; color: var(--slate-blue); margin-bottom: 18px;">Deterministic verification counts</p>
+            
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 4px;">
+                  <span>Verified Quotes in Evidence</span>
+                  <span id="stat-quotes-count">7 / 7 Quotes</span>
+                </div>
+                <div style="height: 8px; border-radius: 4px; background: #e2e8f0; overflow: hidden;">
+                  <div id="bar-quotes" style="height: 100%; width: 100%; background: var(--sky-blue);"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 4px;">
+                  <span>Expected Area Coverage</span>
+                  <span id="stat-area-count">5 / 6</span>
+                </div>
+                <div style="height: 8px; border-radius: 4px; background: #e2e8f0; overflow: hidden;">
+                  <div id="bar-coverage" style="height: 100%; width: 83%; background: var(--sprinkle-green);"></div>
+                </div>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 600; margin-bottom: 4px;">
+                  <span>Information Freshness</span>
+                  <span id="stat-fresh-count">2 / 3 Current</span>
+                </div>
+                <div style="height: 8px; border-radius: 4px; background: #e2e8f0; overflow: hidden;">
+                  <div id="bar-fresh" style="height: 100%; width: 66%; background: var(--medical-blue);"></div>
+                </div>
+              </div>
+
+              <div style="margin-top: 10px; padding: 14px; border-radius: 12px; background: var(--soft-blue); font-size: 12px;">
+                <div style="font-weight: 700; margin-bottom: 4px; color: var(--slate-blue);">Quote Verifier Guarantee</div>
+                <div>Every finding is backed by an exact verbatim quote anchored to source positions. Numbers cannot drift.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+          <div class="glass-panel" style="padding: 24px;">
+            <h3 style="font-size: 16px; font-weight: 750; margin-bottom: 4px;">Source Discrepancies & Contradictions</h3>
+            <p style="font-size: 12px; color: var(--slate-blue); margin-bottom: 16px;">Side-by-side evidence with source authority ranking</p>
+            <div id="conflicts-container"></div>
+          </div>
+
+          <div class="glass-panel" style="padding: 24px;">
+            <h3 style="font-size: 16px; font-weight: 750; margin-bottom: 4px;">Prioritized Verify-Next Checklist</h3>
+            <p style="font-size: 12px; color: var(--slate-blue); margin-bottom: 16px;">Formula: Priority = Area Importance × Severity × Authority Factor</p>
+            <div id="checklist-container"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-details" style="display: none; margin-top: 24px;">
+        <div class="glass-panel" style="padding: 24px;" id="details-content-box"></div>
+      </section>
+    </main>
+  </div>
+
+  <button class="floating-ai-fab" onclick="switchTab('advisor'); document.getElementById('advisor-widget-card')?.scrollIntoView({ behavior: 'smooth' });">
+    <span class="neon-dot"></span>
+    <span>AI Gap Advisor</span>
+  </button>
+
+  <div id="inspector-modal" class="modal-backdrop" style="display: none;">
+    <div class="glass-panel modal-box">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+        <h3 style="font-size: 18px; font-weight: 700;" id="modal-title">Source Evidence Inspector</h3>
+        <button onclick="closeModal()" style="background: none; border: none; font-size: 20px; cursor: pointer; color: var(--slate-blue);">✕</button>
+      </div>
+      <div id="modal-body" style="font-size: 14px; line-height: 1.6; color: #334155;"></div>
+      <div style="margin-top: 24px; text-align: right;">
+        <button class="magnetic-btn btn-primary" onclick="closeModal()">Close Inspector</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" style="display: none;"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

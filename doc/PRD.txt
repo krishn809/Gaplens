@@ -1,0 +1,24 @@
+PROJECT: GapLens
+TEAM: DEVENGERS
+LEAD DEVELOPER: Krishn Kushwaha
+HACKATHON: Shinchan Online Hackathon 2026
+PROBLEM STATEMENT: Digital Dark Spot (AI-Assisted Information Gap Detection Platform)
+
+1. EXECUTIVE SUMMARY
+Online decision-makers encounter scattered, contradictory, and out-of-date information. While traditional search retrieves links and summarizers condense visible text, neither highlights missing requirements ("Digital Dark Spots"). GapLens inverts this model: it establishes an expectation checklist, audits multi-source evidence, verifies every claim with verbatim quotes, detects conflicting terms, flags temporal staleness, and generates a prioritized verification checklist.
+
+2. ARCHITECTURE
+- Backend: Python 3 with FastAPI, Uvicorn, and high-performance string matching algorithms.
+- Frontend: HTML5, CSS3 Glassmorphism UI, Vanilla JavaScript, Node.js proxy server.
+- Database: In-memory structured knowledge base with normalized citation anchors.
+- Theme: Clinic white (#f8f8ff) light theme, glassmorphism blur, and interactive cursor animations.
+
+3. CORE WORKFLOW
+- Demo Authentication: One-click authentication for Krishn Kushwaha into the glassmorphism dashboard.
+- Heatmap Matrix: Bidirectional matrix of Expected Areas vs Sources (Covered, Dark Spot, Conflict, Outdated).
+- Quote Verifier: Verbatim quote matching ensuring numeric accuracy and eliminating hallucinated drift.
+- Contradiction Detection: Identifies cross-source discrepancies and evaluates source authority.
+- Freshness & Staleness: Identifies references to prior cycles (e.g. Fall 2023) and flags expired dates.
+- Verified Action Checklist: Ranked verification items with auto-drafted outreach inquiry emails.
+- Re-Run Diff: One-click ingestion of official 2026 Policy Handbook demonstrating instant closure of dark spots.
+
